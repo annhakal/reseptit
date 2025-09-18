@@ -1,4 +1,6 @@
-# reseptit
+# Reseptit
+
+## Sovelluksen toiminnot
 
 * Käyttäjä pystyy luomaan tunnuksen ja kirjautumaan sisään sovellukseen.
 * Käyttäjä pystyy lisäämään, muokkaamaan ja poistamaan reseptejä.
@@ -7,3 +9,30 @@
 * Sovelluksessa on käyttäjäsivut, jotka näyttävät jokaisesta käyttäjästä tilastoja ja käyttäjän lisäämät reseptit.
 * Käyttäjä pystyy valitsemaan reseptille yhden tai useamman luokittelun (esim. alkuruoka, jälkiruoka, vegaani).
 * Käyttäjä pystyy lisäämään kommentteja omiin ja muiden käyttäjien resepteihin.
+
+## Sovelluksen asentaminen
+
+Asenna `flask`-kirjasto:
+
+```
+$ pip install flask
+```
+
+Luo tietokannan taulut ja lisää alkutiedot:
+
+```
+$ sqlite3 database.db < schema.sql
+```
+
+Voit käynnistää sovelluksen näin:
+
+```
+$ flask run
+```
+
+
+
+
+
+
+
