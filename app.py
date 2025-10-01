@@ -45,8 +45,14 @@ def create_item():
     require_login()
 
     title = request.form["title"]
+    if not title or len(title) > 50:
+        abort(403)
     ingredients = request.form["ingredients"]
+    if not ingredients or len(ingredients) > 1000:
+        abort(403)
     instructions = request.form["instructions"]
+    if len(instructions) > 1000:
+        abort(403)
     user_id = session["user_id"]
 
     items.add_item(title, ingredients, instructions, user_id)
