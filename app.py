@@ -71,6 +71,7 @@ def edit_item(item_id):
 
 @app.route("/update_item", methods=["POST"])
 def update_item():
+    require_login()
     item_id = request.form["item_id"]
     item = items.get_item(item_id)
     if not item:
@@ -79,8 +80,14 @@ def update_item():
         abort(403)
 
     title = request.form["title"]
+    if not title or len(title) > 50:
+        abort(403)
     ingredients = request.form["ingredients"]
+    if not ingredients or len(ingredients) > 1000:
+        abort(403)
     instructions = request.form["instructions"]
+    if len(instructions) > 1000:
+        abort(403)
 
     items.update_item(item_id, title, ingredients, instructions)
 
