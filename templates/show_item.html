@@ -17,22 +17,16 @@
 <p>
     {{ item.ingredients }}
 </p>
-<p>
-    {{ item.instructions }}
-</p>
-<p>
-    Ilmoittaja: <a href="/user/{{ item.user_id }}">{{ item.username }}</a>
-</p>
+<ul>
+    <li>{{ item.instructions }}</li>
+    <li>Ilmoittaja: <a href="/user/{{ item.user_id }}">{{ item.username }}</a></li>
 {% if classes %}
-<p>
-    Luokat:
-    <ul>
-        {% for class in classes %}
-        <li>{{ class.title}}: {{ class.value }}</li>
-        {% endfor %}
-    </ul>
-</p>
+    {% for class in classes %}
+    <li>{{ class.title}}: {{ class.value }}</li>
+    {% endfor %}
 {% endif %}
+</ul>
+{% if session.user_id %}
 <h3>Kommentit</h3>
 <ul>
     {% for comment in comments %}
@@ -47,4 +41,5 @@
     <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}" />
     <input type="submit" value="Lähetä" />
 </form>
+{% endif %}
 {% endblock %}
