@@ -4,12 +4,12 @@
 
 * Käyttäjä pystyy luomaan tunnuksen ja kirjautumaan sisään sovellukseen.
 * Käyttäjä pystyy lisäämään, muokkaamaan ja poistamaan reseptejä.
-* Käyttäjä näkee sovellukseen lisätyt reseptit. Käyttäjä näkee sekä itse lisäämänsä    että muiden käyttäjien lisäämät reseptit.
+* Käyttäjä näkee sovellukseen lisätyt reseptit. Käyttäjä näkee sekä itse lisäämänsä, että muiden käyttäjien lisäämät reseptit.
 * Käyttäjä pystyy etsimään reseptejä hakusanalla. Käyttäjä pystyy hakemaan sekä itse lisäämiään että muiden käyttäjien lisäämiä reseptejä.
 * Sovelluksessa on käyttäjäsivut, jotka näyttävät jokaisesta käyttäjästä tilastoja ja käyttäjän lisäämät reseptit.
-* Käyttäjä pystyy valitsemaan reseptille yhden tai useamman luokittelun (esim. alkuruoka, jälkiruoka, vegaani).
+* Käyttäjä pystyy valitsemaan reseptille luokittelun (esim. alkuruoka, jälkiruoka, vegaani).
 * Käyttäjä pystyy lisäämään kommentteja omiin ja muiden käyttäjien resepteihin.
-* Käyttäjä pystyy lisäämään kuvia omiin resepteihin.
+* Käyttäjä pystyy lisäämään kuvan omaan reseptiin.
 
 ## Sovelluksen asentaminen
 
