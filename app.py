@@ -106,8 +106,7 @@ def create_item():
 
     items.add_item(title, ingredients, instructions, user_id, classes)
 
-    item_id = db.last_insert_id()
-    return redirect("/item/" + str(item_id))
+    return redirect("/")
 
 @app.route("/create_comment", methods=["POST"])
 def create_comment():
