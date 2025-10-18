@@ -20,8 +20,8 @@ def add_item(title, ingredients, instructions, user_id, classes):
     item_id = db.last_insert_id()
 
     sql = "INSERT INTO item_classes (item_id, title, value) VALUES (?, ?, ?)"
-    for title, value in classes:
-        db.execute(sql, [item_id, title, value])
+    for class_title, class_value in classes:
+        db.execute(sql, [item_id, class_title, class_value])
 
 def add_comment(item_id, user_id, content):
     sql = "INSERT INTO comments (item_id, user_id, content) VALUES (?, ?, ?)"
@@ -88,8 +88,8 @@ def update_item(item_id, title, ingredients, instructions, classes):
     db.execute(sql, [item_id])
 
     sql = "INSERT INTO item_classes (item_id, title, value) VALUES (?, ?, ?)"
-    for title, value in classes:
-        db.execute(sql, [item_id, title, value])
+    for class_title, class_value in classes:
+        db.execute(sql, [item_id, class_title, class_value])
 
 def remove_item(item_id):
     sql = "DELETE FROM comments WHERE item_id = ?"
