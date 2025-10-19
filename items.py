@@ -108,3 +108,20 @@ def find_items(query):
             ORDER BY id DESC"""
     like = "%" + query + "%"
     return db.query(sql, [like, like])
+
+def get_items_page(page, page_size):
+    sql = """SELECT items.id, items.title, users.id user_id, users.username,
+                    COUNT(comments.id) comment_count
+             FROM items
+             JOIN users ON items.user_id = users.id
+             LEFT JOIN comments ON items.id = comments.item_id
+             GROUP BY items.id
+             ORDER BY items.id DESC
+             LIMIT ? OFFSET ?"""
+    limit = page_size
+    offset = page_size * (page - 1)
+    return db.query(sql, [limit, offset])
+
+def item_count():
+    sql = "SELECT COUNT(*) AS c FROM items"
+    return db.query(sql)[0]["c"]
